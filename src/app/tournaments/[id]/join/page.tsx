@@ -24,13 +24,6 @@ import { Popover, PopoverContent, PopoverTrigger } from '@/components/ui/popover
 import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem } from '@/components/ui/command';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 
-export async function generateStaticParams() {
-  const tournaments = await getTournaments();
-  return tournaments.map((tournament) => ({
-    id: tournament.id,
-  }));
-}
-
 const playerSchema = z.object({
   name: z.string().min(1, { message: "Player name is required." }),
   id: z.string().min(1, { message: "Player ID is required." }),
