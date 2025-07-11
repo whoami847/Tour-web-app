@@ -1,3 +1,4 @@
+"use client";
 
 import { useParams, notFound } from 'next/navigation';
 import Image from 'next/image';
@@ -28,11 +29,6 @@ const GameDetailsSkeleton = () => (
         </div>
     </div>
 );
-
-export async function generateStaticParams() {
-    // In a real application, you would fetch game IDs here
-    return [];
-}
 
 export default function GameDetailsPage() {
     const params = useParams<{ id: string }>();
