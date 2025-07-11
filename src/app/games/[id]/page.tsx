@@ -1,6 +1,4 @@
-"use client";
-
-import { useParams, notFound } from 'next/navigation';
+import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { getGame, getGames } from '@/lib/games-service';
 import type { GameCategory } from '@/types';
@@ -11,6 +9,10 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 const GameDetailsSkeleton = () => (
+
+export async function generateStaticParams() {
+  return [];
+}
     <div className="container mx-auto px-4 py-8 md:pb-8 pb-24 animate-pulse">
         <Skeleton className="h-10 w-24 mb-8" />
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -31,7 +33,7 @@ const GameDetailsSkeleton = () => (
 );
 
 export default function GameDetailsPage() {
-    const params = useParams<{ id: string }>();
+    const { id } = useParams<{ id: string }>();
 
     if (loading) {
         return <GameDetailsSkeleton />;
