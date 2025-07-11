@@ -9,12 +9,12 @@ import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
 const GameDetailsSkeleton = () => (
-
-export async function generateStaticParams() {
-  return [];
-}
-    <div className="container mx-auto px-4 py-8 md:pb-8 pb-24 animate-pulse">
+  <div className="container mx-auto px-4 py-8 md:pb-8 pb-24 animate-pulse">
         <Skeleton className="h-10 w-24 mb-8" />
+       
+    </div>
+);
+    
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="md:col-span-1">
                 <Skeleton className="aspect-square w-full rounded-lg" />
@@ -29,8 +29,10 @@ export async function generateStaticParams() {
                 </div>
             </div>
         </div>
-    </div>
-);
+
+export async function generateStaticParams() {
+  return [];
+}
 
 export default function GameDetailsPage() {
     const { id } = useParams<{ id: string }>();
