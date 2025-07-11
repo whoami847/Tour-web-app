@@ -1,6 +1,4 @@
-'use client';
 
-import { useState, useEffect } from 'react';
 import { useParams, notFound } from 'next/navigation';
 import Image from 'next/image';
 import { getGame, getGames } from '@/lib/games-service';
@@ -31,25 +29,13 @@ const GameDetailsSkeleton = () => (
     </div>
 );
 
+export async function generateStaticParams() {
+    // In a real application, you would fetch game IDs here
+    return [];
+}
+
 export default function GameDetailsPage() {
     const params = useParams<{ id: string }>();
-    const [game, setGame] = useState<GameCategory | null>(null);
-    const [loading, setLoading] = useState(true);
-
-    useEffect(() => {
-        if (params.id) {
-            const fetchGame = async () => {
-                const data = await getGame(params.id as string);
-                if (data) {
-                    setGame(data);
-                } else {
-                    notFound();
-                }
-                setLoading(false);
-            };
-            fetchGame();
-        }
-    }, [params.id]);
 
     if (loading) {
         return <GameDetailsSkeleton />;
