@@ -5,14 +5,14 @@
 ## 📱 Apps Overview
 
 ### 1. **User Panel App** 
-- **App ID**: `com.esportshq.user`
+- **App ID**: `com.aff-tour.user`
 - **App Name**: "Esports HQ - User"
 - **Target Users**: Regular users, players
 - **Color Theme**: Blue & Green
 - **Icon**: User-friendly gaming icons
 
 ### 2. **Admin Panel App**
-- **App ID**: `com.esportshq.admin` 
+- **App ID**: `com.aff-tour.user` 
 - **App Name**: "Esports HQ - Admin"
 - **Target Users**: Administrators, moderators
 - **Color Theme**: Red & Orange
