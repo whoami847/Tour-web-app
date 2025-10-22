@@ -1,0 +1,10 @@
+{
+  "scripts": {
+    "build:user": "npm run build && cp capacitor.config.user.ts capacitor.config.ts && npx cap sync",
+    "build:admin": "npm run build && cp capacitor.config.admin.ts capacitor.config.ts && npx cap sync", 
+    "open:user:android": "npm run build:user && npx cap open android",
+    "open:admin:android": "npm run build:admin && npx cap open android",
+    "generate:apk:user": "npm run build:user && cd android && ./gradlew assembleDebug && cd ..",
+    "generate:apk:admin": "npm run build:admin && cd android && ./gradlew assembleDebug && cd .."
+  }
+}
